@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button
+    slot="start"
+    text="Volver"
+    mode="ios"
+    ></ion-back-button>
+    <ion-title>Restaurante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre</ion-label>
+    <ion-input [(ngModel)]="restaurante.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Dirección</ion-label>
+    <ion-input [(ngModel)]="restaurante.direccion"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Descripción</ion-label>
+    <ion-input [(ngModel)]="restaurante.descripcion"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Imagen</ion-label>
+    <ion-input [(ngModel)]="restaurante.imagen"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Precio</ion-label>
+    <ion-input [(ngModel)]="restaurante.precio"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Categoria</ion-label>
+    <ion-input [(ngModel)]="restaurante.categoria"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Url</ion-label>
+    <ion-input [(ngModel)]="restaurante.url"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="grabar()" >Grabar</ion-button>
+
+</ion-content>

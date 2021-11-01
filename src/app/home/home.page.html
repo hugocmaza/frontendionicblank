@@ -1,7 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+
     <ion-title>
-      Blank
+      Restaurantes
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,9 +13,34 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/restaurante">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+
+  <ion-list >
+    <ion-item  *ngFor="let item of restaurantes" class="--padding-bottom:10px" >
+      <ion-label>{{item.id}}-{{item.nombre}}-{{item.direccion}}</ion-label>
+      <ion-fab vertical="center" horizontal="end" >
+        <ion-fab-button>Acciones</ion-fab-button>
+        <ion-fab-list side="start">
+          <ion-fab-button (click)="editar(item.id)">
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button (click)="eliminar(item.id)" >
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-fab-button>
+
+        </ion-fab-list>
+      </ion-fab>
+    </ion-item>
+  </ion-list>
+
+
+
+
+
 </ion-content>

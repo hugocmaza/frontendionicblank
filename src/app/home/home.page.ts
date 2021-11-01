@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { Irestaurantes } from '../servicios/irestaurantes';
+import { RestaurantesService } from '../servicios/restaurantes.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +10,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  restaurantes: Irestaurantes[] ;
+  constructor(private router: Router, private srestaurante: RestaurantesService) {
+    this.restaurantes = this.srestaurante.getRestaurantes();
+  }
 
-  constructor() {}
+
+  editar(id: number){
+    this.router.navigate(['/restaurante/'+ id]);
+  }
+
+  eliminar(id: number){
+    this.srestaurante.eliminar(id);
+  }
 
 }
